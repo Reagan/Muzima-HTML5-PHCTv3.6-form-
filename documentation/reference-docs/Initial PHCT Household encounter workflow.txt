@@ -1,0 +1,612 @@
+Meta Information
+         Obtain start_time as current time
+
+         Obtain end_time
+
+         Obtain deviceid
+
+         obtain subscriber_id
+
+ 
+
+Survey Information
+
+        gps_location field is required
+
+        provider_id is required and use checkdigit
+
+ 
+
+Household Information
+
+       household_id is required, uses checkdigit  and must be unique
+
+       catchment_area has calculated attribute which fills out the location, it is required.
+
+         The calculated value MUST be adjusted by the PHCT administrators prior to installation of a form into a counsellor's device to indicate the location id of the counsellor.
+
+       The village is a drop down list. The drop list is populated through a  lookup function that loads villages from a special csv file installed on the phone device. The special file fills out
+
+            the location, sublocation, district and division
+
+ 
+
+Were you accepted in?
+
+  It is required field
+
+ 
+
+ 
+
+Adults in Household
+
+  hint:Must be 13 years old and above. If none, enter 0.
+
+  This shows up when either the question "Were you accepted in?"'s answer is accepted/declined/not at home
+
+  It is a required field. This Number must be 0 or more
+
+ 
+
+Children in Household
+
+    hint:Must be less than 13 years old. If none, enter 0.
+
+    This shows up when  the question "Were you accepted in?"'s answer is accepted or declined or not at home
+
+    It is required
+
+    It is an integer field
+
+    This Number must be 0 or more. If number of adults is 0 you cannot have 0 children
+
+                        
+
+                        
+
+Total in Household
+
+    hint:Confirm this total number of adults and children with CHW.
+
+    This shows up when  the question "Were you accepted in?"'s answer is accepted or declined or not at home
+
+    It is a read only internal field that is calculated by adding up household adults  and children under 13 years
+
+    It is an integer field
+
+ 
+
+Adults Eligible for Testing
+
+    hint:Must be 13 years old and above. If none, enter 0.
+
+    This shows up when  the question "Were you accepted in?"'s answer is accepted AND the number of Adults in Household is more than zero
+
+    It is required
+
+    The Number of eligible adults must be 0 or more but not more than number of adults in the household
+
+                                
+
+Children Eligible for Testing
+
+    hint:Must be less than 13 years old. If none, enter 0.
+
+    This shows up when  the question "Were you accepted in?"'s answer is accepted AND the number of Adults in Household is more than zero
+
+ 
+
+Total Target/Eligible
+
+    It is read only
+
+    This shows up when  the question "Were you accepted in?"'s answer is accepted
+
+        It is an aggrigate of eligible adults and children in an household:
+
+ 
+
+              calculate="if ((../eligible_adults  &gt; 0 and ../eligible_under13 &gt; 0), ../eligible_adults + ../eligible_under13,
+
+                                                               if(../eligible_adults &gt; 0, ../eligible_adults, ../eligible_under13))"
+
+              relevant="/form/survey/allowed_in='accepted'"
+
+         
+
+Schedule Return Date
+
+    This shows up when  the question "Were you accepted in?"'s answer is allowed in
+
+    Return date must be after today
+
+                 relevant="../allowed_in='laterdate'"
+
+         constraint=". &gt;= today()"
+
+ 
+
+Number of Bed Nets
+
+    hint:If none, enter 0
+
+        It is required
+
+    Number of bed nets must be positive
+
+           constraint=". &gt;= 0"
+
+ 
+
+Number of Nets Provided
+
+    It is required
+
+ 
+
+Voucher ID of Provided Net
+
+    Response to "Number of Bed Nets" must be greater than zero
+
+    It is required
+
+Total Land Owned
+
+    hint:Please enter in acres. If none, enter 0.</hint>                     
+
+        It is required
+
+        The number must be greater or equal to zero
+
+    constraint=". &gt;= 0"
+
+ 
+
+Number of Cows Owned
+
+    hint:If none, enter 0
+
+    It is required
+
+        The number must be greater or equal to zero
+
+    constraint=". &gt;= 0"
+
+ 
+
+Number of Goats Owned
+
+        hint:If none, enter 0
+
+    It is required
+
+        The number must be greater or equal to zero
+
+    constraint=". &gt;= 0".
+
+ 
+
+Number of Sheep Owned
+
+          hint:If none, enter 0.
+
+    It is required
+
+        The number must be greater or equal to zero
+
+    constraint=". &gt;= 0"
+
+ 
+
+Children Between 3-20 Years
+
+          hint:Include all children in household
+
+    It is required
+
+        The number must be greater or equal to zero
+
+    constraint=". &gt;= 0 and . &lt;= /form/household/meta_data/total_household"
+
+    This number cannot be more than people in household nor be less than 0
+
+ 
+
+Children Attending School
+
+    hint:Include pre-primary, primary through college
+
+    Number of children in school must be less than or equal to the number in household and cannot be less than 0.
+
+    It is required
+
+    constraint=". &lt;= ../children_in_household and . &gt;= 0"
+
+                        
+
+Individual Data
+
+===============
+
+Household Counseling and Testing for the Household ID
+
+    hint:Please confirm this ID is correct
+
+        The field is calculated from  household Id provided at household level to help user confirm he/she is handling the correct household
+
+        It is a read only
+
+    constraint="review('Household ID', .)"
+
+ 
+
+       Encounter
+
+          encounter.encounter_datetime is a readonly whose value is picked from the phone device date
+
+         encounter.provider_id is a readonly whose value is picked obtained from the survey section
+
+         encounter.location_id is a readonly whose value is picked from the catchment area of the household section
+
+         
+
+      Patient
+
+           Scan HCT AMRS ID
+
+             hint:Ensure you have enough light.
+
+             Use a Lunh check digit validation and must be unique
+
+             It is input through barcode reader
+
+             constraint="regex(., '^\w+[-]?\d{1}') and checkdigit(.) and unique('individual', .)"
+
+             
+
+           Enter HCT AMRS ID
+
+             It is required
+
+             Use a Lunh check digit validation and must be unique
+
+           Shows up when  "Scan HCT AMRS ID" question is not filled out
+
+       constraint="regex(., '^\w+[-]?\d{1}') and checkdigit(.) and unique('individual', .)"
+
+ 
+
+General notes
+
+To ensure consistency, a field patient.medical_record_number  is calculated based on the values obtained by either scanning or entering HCT AMRS ID. The patient.medical_record_number is not visible to the user. There is no checkdigit on this as it obtains values from fields with checkdigit validations.
+
+ 
+
+There patient_identifier.identifier_type_id is preset to 8, there is no option for user to edit or view this field                    
+
+                              
+
+First Name
+
+It is required
+
+constraint="review('Given Name', .) and store('givenname', .)"
+
+ 
+
+Middle Name
+
+It is NOT required
+
+constraint="review('Middle Name', .) and store('middlename', .)"
+
+ 
+
+Family Name
+
+constraint="review('Family Name', .) and store('familyname', .)"
+
+It is required
+
+ 
+
+Gender
+
+It is required
+
+constraint="review('Gender', .)"                  
+
+                         
+
+                                
+
+Birthdate and age
+
+  Age Entry Mode
+
+  It is required
+
+ 
+
+Age/Birthdate Estimated?
+
+  It is required
+
+ 
+
+Select Birthdate
+
+   Shows up when the response to " Age Entry Mode" is Enter Full Birthdate
+
+   The date cannot be less than the current date
+
+   constraint=". &lt;= today()"
+
+ 
+
+Number of Years  
+
+   Shows up when the response to " Age Entry Mode" is Enter Age in Years or Months
+
+   The age must be less or equal to 110 years but must be greater or equal to 0
+
+   constraint=". &gt;= 0 and . &lt;= 110"
+
+ 
+
+Number of Months
+
+   Shows up when the response to " Age Entry Mode" is Enter Age in Years or Months  AND Number of Years is  less than 5
+
+   The number of months entered must be between 0 and 11 months
+
+   constraint=". &gt;= 0 and . &lt;= 11"
+
+Notes: a am approximated age is calculated based on the date of birth and the current date. The approximated age is invisible to the user.
+
+The calculation logic is shown below :
+
+calculate="if(../age_type='birth_date', ((now()-../patient.birthdate) div 30.4375),
+
+                                        (if(../age_in_months &gt;0, ((../age_in_years * 12)+../age_in_months), (../age_in_years * 12))))"           
+
+ 
+
+ 
+
+Enter Phone Number
+
+hint:If none, enter 0.
+
+It is required
+
+constraint="(. = '0' or regex(., '\d{8,12}')) and review('Phone Number', .) and review('Year of Birth', ../approximate_age)"                       
+
+                      
+
+Re-Enter Phone Number
+
+hint:If none, enter 0.
+
+A validation of the phone number entered above
+
+Shows up when response to "Enter Phone Number" is not 0
+
+It is required
+
+constraint=". = ../patient.contact_phone_number"
+
+                   
+
+ 
+
+Individual Demographics
+
+hint:Please write this demographics on the card and issue it out to the client.
+
+Read only display
+
+ 
+
+Marital Status
+
+hint:Are you currently married or living with a partner?
+
+It is required
+
+Shows when age is equal/greater than 13 years
+
+                       
+
+Do you have a regular partner?  
+
+  shows up when /form/hou is '1057^NEVER_MARRIED^99DCT'  or '1058^DIVORCED^99DCT' or '1056^SEPARATED^99DCT' or '1059^WIDOWED^99DCT'                    
+
+  It is required                     
+
+                       
+
+Do you know the status of your partner?
+
+  It is required
+
+  Shows up when the response to "Do you have a regular partner? " is yes and approximate age is equal/greater than 13 years
+
+ 
+
+Condom use?
+
+Shows when age is equal/greater than 13 years
+
+It is required
+
+ 
+
+House Status
+
+hint:A household resident is a person who is part of a household (including servants/employees).
+
+It is required
+
+ 
+
+Relation to Head of Household                        
+
+It is required
+
+constraint="not(selected(., 'self')) or (selected(.,'self') and selected(../house_status/value,'6141^HOUSEHOLD_RESIDENT^99DCT'))"
+
+                       
+
+Individual Economic Questions
+
+ 
+
+Occupation
+
+hint:Which occupation?
+
+Shows when age is equal/greater than 13 years
+
+ 
+
+Average income per month
+
+Shows when age is equal/greater than 13 years
+
+ 
+
+Wage hours in the Past Week
+
+hint:Include for wage and business.
+
+Required
+
+Shows when age is equal/greater than 13 years
+
+constraint=". &lt;= 168 and . &gt;= 0"
+
+A week Must have  168 hours or below
+
+ 
+
+Times Visited Clinic Due to Sickness in Last Month
+
+hint:If none, enter 0.
+
+Required
+
+constraint=". &gt;= 0"
+
+ 
+
+Amount of Money Spent on Medication in Last Month
+
+hint:Value in Kshs
+
+Required
+
+constraint=". &gt;= 0"
+
+Cannot be less than 0
+
+                       
+
+        
+
+Pregnancy Questions
+
+===================
+
+Obviously Pregnant?
+
+hint:Is the client pregnant?
+
+Required
+
+Shows when age is equal/greater than 13 years and patient is female
+
+                        
+
+Pregnancy Test Result:
+
+Shows when patient is not Obviously Pregnant AND the last menstrual period date is greater than 35 days AND the last menstrual period date was less than 365 days and the client is HIV Positive
+
+relevant="../../pregnancy_status/value='0'  
+
+          and (today() - ../../last_menstrual_period_date/value &gt; 35
+
+          and today() - ../../last_menstrual_period_date/value &lt; 365)
+
+          and (../../test_outcome=' patient to a HIV Clinic' or ../../hiv_test_result_previously/value='703^POSITIVE^99DCT')"                         
+
+                        
+
+                        
+
+Attending Antenatal Clinic
+
+hint:Is the client enrolled in Antenatal Care Service?                       
+
+Shows when patient is Obviously Pregnant  or  urine pregnancy test is POSITIVE                    
+
+required
+
+ 
+
+Issued with mosquito net
+
+hint:Was the client issued with a mosquito net?
+
+Shows when patient is Obviously Pregnant  or  urine pregnancy test is POSITIVE                    
+
+required
+
+ 
+
+Using mosquito net
+
+hint:Was the client using a mosquito net?
+
+Shows when patient is Obviously Pregnant  or  urine pregnancy test is POSITIVE                             
+
+ 
+
+Mother Died is required
+
+ 
+
+Mother HIV positive is required
+
+ 
+
+Father Deceased is required
+
+ 
+
+Father Hiv positive is required
+
+************************************************************
+* Initial PHCT Household encounter form workflow and logic *
+************************************************************
+
+General notes:
+
+Child needs hiv test is a read only informational field that is displayed when:
+
+     Shows when age is equal/greater than 13 years AND  mother is deceased or it is unknown whether the mother is deceased
+
+     or  mother is hiv positive  or  mother's hiv status is UNKNOWN
+
+     The values is field based on the following calculate logic:
+
+         calculate="if(../../patient/approximate_age &lt; 156 and (../mother_deceased_coded/value='1065^YES^99DCT' or ../mother_deceased_coded/value='1067^UNKNOWN^99DCT' or
+
+                                        ../mother_hiv_positive/value='1065^YES^99DCT' or ../mother_hiv_positive/value='1067^UNKNOWN^99DCT'), 'Needs Testing', 'Does Not Need Testing')"
+
+ 
+
+Test Child Anyway
+
+   Shows up when age is less than 13 years AND
