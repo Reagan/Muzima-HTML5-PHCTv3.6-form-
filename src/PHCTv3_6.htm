@@ -14,556 +14,567 @@
     <title>PHCT Household survey</title>
 </head>
 <body class="col-md-8 col-md-offset-2">
-<div id="pre_populate_data"></div>
-<form id="registration_form" name="registration_form">
+    <div id="pre_populate_data"></div>
+    <form id="phct-household-survey-form" name="phct-household-survey-form">
 
-<h2 class="text-center">PHCT Household survey</h2>
+        <h2 class="text-center">PHCT Household survey</h2>
 
- <div class="form-group injected-field" id="age.birth.date.estimate">
-    <label for="ampath.site">Age birth date estimate</label>
-    <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-</div>
-
-<div class="section">
-    <h3>Household Information</h3>
-
-    <div class="form-group">
-        <input class="form-control" id="patient.uuid"
-               name="patient.uuid" type="hidden" readonly="readonly">
-    </div>
- 
-    <div class="form-group">
-        <input class="form-control" id="survey.starttime"
-               name="survey.starttime" type="hidden" readonly="readonly">
-    </div>
-
-    <div class="form-group">
-        <input class="form-control" id="device.id"
-               name="device.id" type="hidden" readonly="readonly">
-    </div>
-
-    <div class="form-group">
-        <input class="form-control" id="subscriber.id"
-               name="subscriber.id" type="hidden" readonly="readonly">
-    </div>
-
-    <div class="form-group">
-        <input class="form-control" id="gps.coords"
-               name="gps.coords" type="hidden" readonly="readonly">
-    </div>
-
-    <div class="form-group">
-        <label for="provider.id">Provider ID:</label>
-        <input class="form-control" id="provider.id" name="provider.id" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Ampath site/Satellite Clinic:</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Household ID:</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Enter household village</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-</div>
-<div class="section">
-    <h3>Household Definition</h3>
-
-    <div class="form-group">
-        <label for="allowed.in">Allowed in?</label>
-        <select class="form-control" id="allowed.in" name="allowed.in">
-		<option>Accepted</option>
-		<option>Declined</option>
-		<option>Not home</option>
-		<option>Requested for later date</option>
-	</select>
-    </div>
- 
-    <section id="schedule.return.date" class="logic.section">
-        <div class="form-group">
-    	   <label for="schedule.return.date">Schedule return date</label>
-        </div>
-	</section>
-    
-    <section id="schedule.return.date" class="logic.section">
-        <div class="form-group">
-            <label for="ampath.site">Number of house hold members >= 13 years</label>
-            <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-        </div>
-        <div class="form-group">
-            <label for="ampath.site">Number of house hold members < 13 years</label>
-            <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-        </div>
-        <div class="form-group">
-            <label for="ampath.site">Total number of house hold members</label>
-            <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-        </div>
-    </section>
-</div>
-<div class="section">
-    <h3>Household Members Definition</h3>
-
-    <div class="form-group">
-        <label for="ampath.site">Number of members >= 13 eligible for testing</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Number of members < 13 years eligible for testing</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Total number of house hold members eligible for testing</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-</div>
-<div class="section">
-    <h3>Social Economic Questions</h3>
-
-    <div class="form-group">
-        <label for="ampath.site">Total land owned</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Number of cows owned</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Number of sheep owned</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Children between 3-20 years on household</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Number attending school or educational institution</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-</div>
-<div class="section">
-    <h3>Household Member Definition</h3>
-	
-    <div class="form-group">
-        <label for="ampath.site">Number of bed nets</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="number.of.nets.provided">Number of nets provided</label>
-        <select class="form-control" id="number.of.nets.provided" name="ampath.site">
-    		<option>Zero</option>
-    		<option>One</option>
-    	</select>
-    </div>
-
-    <section id="voucher.id.net.provided" class="logic.section">
-        <div class="form-group">
-        	<label for="ampath.site">Voucher ID of net provided</label>
-        	<input class="form-control" id="ampath.site" name="ampath.site" type="text">
-        </div>
-    </section>
-</div>
-<div class="section">
-    <h3>Basic Information</h3>
-    
-    <div class="form-group">
-        <label for="ampath.site">Confirm Universal ID</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-     <div class="form-group">
-        <label for="ampath.site">First Name</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Middle Name</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Gender</label>
-        <select class="form-control" id="ampath.site" name="ampath.site">
-		<option>Male</option>
-		<option>Female</option>
-	</select>
-    </div>
-
-    <div class="form-group">
-    	<label for="age.entry.mode">Age Entry Mode</label>
-    	<select class="form-control" id="age.entry.mode">
-    		<option>Enter full date</option>
-    		<option>Enter age in years and months</option>
-    	</select>
-    </div>
-
-    <section id="enter.full.date" class="logic.section">
-        <div class="form-group">
-            <label for="ampath.site">Enter birthdate</label>
-            <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-        </div>
-    </section>
-
-    <section id="enter.date.months.years" class="logic.section">
-        <div class="form-group">
-            <label for="ampath.site">Enter number of years</label>
+        <div class="form-group injected-field" id="age-birth-date-estimate">
+            <label for="ampath.site">Age birth date estimate</label>
             <input class="form-control" id="ampath.site" name="ampath.site" type="text">
         </div>
 
-        <div class="form-group">
-            <label for="ampath.site">Enter number of months</label>
-            <input class="form-control" id="ampath.site" name="ampath.site" type="text">
+        <div class="section">
+            <h3>Household Information</h3>
+
+            <div class="form-group">
+                <input class="form-control" id="patient-uuid"
+                       name="patient-uuid" type="hidden" readonly="readonly">
+            </div>
+         
+            <div class="form-group">
+                <input class="form-control" id="survey-starttime"
+                       name="survey-starttime" type="hidden" readonly="readonly">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" id="device-id"
+                       name="device-id" type="hidden" readonly="readonly">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" id="subscriber-id"
+                       name="subscriber-id" type="hidden" readonly="readonly">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" id="gps-coords"
+                       name="gps-coords" type="hidden" readonly="readonly">
+            </div>
+
+            <div class="form-group">
+                <label for="provider-id">Provider ID:</label>
+                <input class="form-control" id="provider-id" name="provider-id" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="ampath-site">Ampath site/Satellite Clinic:</label>
+                <input class="form-control" id="ampath-site" name="ampath-site" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="household-id">Household ID:</label>
+                <input class="form-control" id="household-id" name="household-id" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="household-village">Enter household village</label>
+                <input class="form-control" id="household-village" name="household-village" type="text">
+            </div>
         </div>
-    </section>
+        <div class="section">
+            <h3>Household Definition</h3>
 
-    <div class="form-group">
-        <label for="ampath.site">Phonenumber</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Reenter phonenumber</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-</div>
-<div class="section">
-    <h3>AMRS ID Scan</h3>
-
-    <div class="form-group">
-        <label for="ampath.site">Scan HCT AMRS Barcode</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="ampath.site">Enter HCT AMRS ID</label>
-        <input class="form-control" id="ampath.site" name="ampath.site" type="text">
-    </div>
-</div>
-<div class="section">
-    <h3>House Status</h3>
-
-    <div class="form-group">
-        <label for="age.entry.mode">House status</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Household resident</option>
-            <option>Visitor from catchment area</option>
-            <option>Visitor from elsewhere</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="age.entry.mode">Relationship to household head</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Self (Household head)</option>
-            <option>Spouse</option>
-            <option>Son/Daughter</option>
-            <option>Son/Daughter-in-law</option>
-            <option>Parent</option>
-            <option>Parent-in-law</option>
-            <option>Grandchild</option>
-            <option>GransParent</option>
-            <option>Brother/Sister</option>
-            <option>Uncle/Aunt</option>
-            <option>Co-wife</option>
-            <option>Cousin</option>
-            <option>Niece/Nephew</option>
-            <option>Stepchild</option>
-            <option>Foster child</option>
-            <option>Friend</option>
-            <option>House help</option>
-            <option>Employee</option>
-            <option>Tenant/Renter</option>
-            <option>Other</option>
-            <option>Don't know</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="age.entry.mode">Education level</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>None</option>
-            <option>Adult Education</option>
-            <option>Primary School</option>
-            <option>Secondary School</option>
-            <option>College</option>
-            <option>University</option>
-        </select>
-    </div>
-</div>
-<div class="section">
-    <h3>Health Questions</h3>
-
-     <div class="form-group">
-        <label for="patient.family_name">Number of times gone to a health facility due to a health problem in the last 4 weeeks</label>
-        <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-    </div>
-
-    <div class="form-group">
-        <label for="patient.family_name">Amount of money used on medical care with your sillness in the last 4 weeeks</label>
-        <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-    </div>
-
-     <div class="form-group">
-        <label for="age.entry.mode">Mother died?</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-    </div>
-
-    <section id="mother.hiv.positive" class="logic.section">
-        <div class="form-group">
-            <label for="age.entry.mode">Mother HIV+?</label>
-            <select class="form-control" id="age.entry.mode">
-                <option>Yes</option>
-                <option>No</option>
-            </select>
+            <div class="form-group">
+                <label for="allowed-in">Allowed in?</label>
+                <select class="form-control" id="allowed-in" name="allowed-in">
+            		<option>Accepted</option>
+            		<option>Declined</option>
+            		<option>Not home</option>
+            		<option>Requested for later date</option>
+            	</select>
+            </div>
+         
+            <section id="not-allowed-in" class="logic.section">
+                <div class="form-group">
+            	   <label for="schedule-return-date">Schedule return date</label>
+                   <input class="form-control" id="schedule-return-date" name="schedule-return-date" type="text">
+                </div>
+        	</section>
+            
+            <section id="allowed-in" class="logic.section">
+                <div class="form-group">
+                    <label for="no-of-household-members-less-than-equal-13-yrs">Number of house hold members >= 13 years</label>
+                    <input class="form-control" id="no-of-household-members-less-than-equal-13-yrs" 
+                        name="no-of-household-members-less-than-equal-13-yrs" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="no-of-household-members-less-than-13-yrs">Number of house hold members < 13 years</label>
+                    <input class="form-control" id="no-of-household-members-less-than-13-yrs" 
+                        name="no-of-household-members-less-than-13-yrs" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="total-number-of-house-hold-members">Total number of house hold members</label>
+                    <input class="form-control" id="total-number-of-house-hold-members" 
+                        name="total-number-of-house-hold-members" type="text">
+                </div>
+            </section>
         </div>
-    </section>
-    
-    <div class="form-group">
-        <label for="age.entry.mode">Father died?</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-    </div>
+        <div class="section">
+            <h3>Household Members Definition</h3>
 
-    <section id="father.hiv.positive" class="logic.section">
-        <div class="form-group">
-            <label for="age.entry.mode">Father HIV+?</label>
-            <select class="form-control" id="age.entry.mode">
-                <option>Yes</option>
-                <option>No</option>
-            </select>
+            <div class="form-group">
+                <label for="total-number-of-house-hold-members-greater-equal-13-yrs">Number of members >= 13 eligible for testing</label>
+                <input class="form-control" id="total-number-of-house-hold-members-greater-equal-13-yrs" 
+                    name="total-number-of-house-hold-members-greater-equal-13-yrs" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="total-number-of-house-hold-members-less-than-13-yrs">Number of members < 13 years eligible for testing</label>
+                <input class="form-control" id="total-number-of-house-hold-members-less-than-13-yrs" 
+                    name="total-number-of-house-hold-members-less-than-13-yrs" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="total-number-of-house-hold-members">Total number of house hold members eligible for testing</label>
+                <input class="form-control" id="total-number-of-house-hold-members" 
+                    name="total-number-of-house-hold-members" type="text">
+            </div>
         </div>
-    </section>
+        <div class="section">
+            <h3>Social Economic Questions</h3>
 
-    <div class="form-group">
-        <span>Alert: User needs testing...</span>
-    </div>
+            <div class="form-group">
+                <label for="total-land-owned">Total land owned</label>
+                <input class="form-control" id="total-land-owned" name="total-land-owned" type="text">
+            </div>
 
-    <div class="form-group">
-        <label for="age.entry.mode">Previously tested for HIV?</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-    </div>
+            <div class="form-group">
+                <label for="no-of-cows-owned">Number of cows owned</label>
+                <input class="form-control" id="no-of-cows-owned" name="no-of-cows-owned" type="text">
+            </div>
 
-    <section id="previously.tested.hiv" class="logic.section">
-        <div class="form-group">
-            <label for="age.entry.mode">How many times have you been tested for HIV?</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+            <div class="form-group">
+                <label for="no-of-sheep-owned">Number of sheep owned</label>
+                <input class="form-control" id="no-of-sheep-owned" name="no-of-sheep-owned" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="children-between-3-20-yrs">Children between 3-20 years on household</label>
+                <input class="form-control" id="children-between-3-20-yrs" name="children-between-3-20-yrs" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="number-attending-school-technical-institution">Number attending school or educational institution</label>
+                <input class="form-control" id="number-attending-school-technical-institution" 
+                    name="number-attending-school-technical-institution" type="text">
+            </div>
+        </div>
+        <div class="section">
+            <h3>Household Member Definition</h3>
+        	
+            <div class="form-group">
+                <label for="number-bednets">Number of bed nets</label>
+                <input class="form-control" id="number-bednets" name="number-bednets" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="number-of-nets-provided">Number of nets provided</label>
+                <select class="form-control" id="number-of-nets-provided" name="number-of-nets-provided">
+            		<option>Zero</option>
+            		<option>One</option>
+            	</select>
+            </div>
+
+            <section id="voucher-id-net-provided" class="logic.section">
+                <div class="form-group">
+                	<label for="voucher-id-net-provided">Voucher ID of net provided</label>
+                	<input class="form-control" id="voucher-id-net-provided" name="voucher-id-net-provided" type="text">
+                </div>
+            </section>
+        </div>
+        <div class="section">
+            <h3>Basic Information</h3>
+            
+            <div class="form-group">
+                <label for="confirm-universal-id">Confirm Universal ID</label>
+                <input class="form-control" id="confirm-universal-id" name="confirm-universal-id" type="text">
+            </div>
+
+             <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input class="form-control" id="first-name" name="first-name" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="middle-name">Middle Name</label>
+                <input class="form-control" id="middle-name" name="middle" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" name="gender">
+            		<option>Male</option>
+            		<option>Female</option>
+            	</select>
+            </div>
+
+            <div class="form-group">
+            	<label for="age-entry-mode">Age Entry Mode</label>
+            	<select class="form-control" id="age-entry-mode">
+            		<option>Enter full date</option>
+            		<option>Enter age in years and months</option>
+            	</select>
+            </div>
+
+            <section id="enter.full.date" class="logic.section">
+                <div class="form-group">
+                    <label for="birthdate">Enter birthdate</label>
+                    <input class="form-control" id="birthdate" name="birthdate" type="text">
+                </div>
+            </section>
+
+            <section id="enter-date-months-years" class="logic.section">
+                <div class="form-group">
+                    <label for="enter-date-months-years">Enter number of years</label>
+                    <input class="form-control" id="enter-date-months-years" name="enter-date-months-years" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="enter-number-of-months">Enter number of months</label>
+                    <input class="form-control" id="enter-number-of-months" name="enter-number-of-months" type="text">
+                </div>
+            </section>
+
+            <div class="form-group">
+                <label for="phonenumber">Phonenumber</label>
+                <input class="form-control" id="phonenumber" name="phonenumber" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="reenter-phonenumber">Reenter phonenumber</label>
+                <input class="form-control" id="reenter-phonenumber" name="reenter-phonenumber" type="text">
+            </div>
+        </div>
+        <div class="section">
+            <h3>AMRS ID Scan</h3>
+
+            <div class="form-group">
+                <label for="HCT-AMRS-barcode">Scan HCT AMRS Barcode</label>
+                <input class="form-control" id="HCT-AMRS-barcode" name="HCT-AMRS-barcode" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="HCT-AMRS-id">Enter HCT AMRS ID</label>
+                <input class="form-control" id="HCT-AMRS-id" name="HCT-AMRS-id" type="text">
+            </div>
+        </div>
+        <div class="section">
+            <h3>House Status</h3>
+
+            <div class="form-group">
+                <label for="house-status">House status</label>
+                <select class="form-control" id="house-status">
+                    <option>Household resident</option>
+                    <option>Visitor from catchment area</option>
+                    <option>Visitor from elsewhere</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="relationship-to-household-head">Relationship to household head</label>
+                <select class="form-control" name="relationship-to-household-head" id="relationship-to-household-head">
+                    <option>Self (Household head)</option>
+                    <option>Spouse</option>
+                    <option>Son/Daughter</option>
+                    <option>Son/Daughter-in-law</option>
+                    <option>Parent</option>
+                    <option>Parent-in-law</option>
+                    <option>Grandchild</option>
+                    <option>GransParent</option>
+                    <option>Brother/Sister</option>
+                    <option>Uncle/Aunt</option>
+                    <option>Co-wife</option>
+                    <option>Cousin</option>
+                    <option>Niece/Nephew</option>
+                    <option>Stepchild</option>
+                    <option>Foster child</option>
+                    <option>Friend</option>
+                    <option>House help</option>
+                    <option>Employee</option>
+                    <option>Tenant/Renter</option>
+                    <option>Other</option>
+                    <option>Don't know</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="education-level">Education level</label>
+                <select class="form-control" id="education-level" name="education-level">
+                    <option>None</option>
+                    <option>Adult Education</option>
+                    <option>Primary School</option>
+                    <option>Secondary School</option>
+                    <option>College</option>
+                    <option>University</option>
+                </select>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Health Questions</h3>
+
+             <div class="form-group">
+                <label for="number-of-times-gone-to-health-facility-health-problem">Number of times gone to a health facility due to a health problem in the last 4 weeeks</label>
+                <input class="form-control" id="number-of-times-gone-to-health-facility-health-problem" 
+                    name="number-of-times-gone-to-health-facility-health-problem" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="amount-of-money-used-last-4-weeks">Amount of money used on medical care with your sillness in the last 4 weeeks</label>
+                <input class="form-control" id="amount-of-money-used-last-4-weeks" name="amount-of-money-used-last-4-weeks" type="text">
+            </div>
+
+             <div class="form-group">
+                <label for="mother-died">Mother died?</label>
+                <select class="form-control" id="mother-died" name="mother-died">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <section id="mother-hiv-positive-section" class="logic.section">
+                <div class="form-group">
+                    <label for="mother-hiv-positive">Mother HIV+?</label>
+                    <select class="form-control" id="mother-hiv-positive">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </section>
+            
+            <div class="form-group">
+                <label for="age.entry.mode">Father died?</label>
+                <select class="form-control" id="age.entry.mode">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <section id="father.hiv.positive" class="logic.section">
+                <div class="form-group">
+                    <label for="age.entry.mode">Father HIV+?</label>
+                    <select class="form-control" id="age.entry.mode">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="form-group">
+                <span>Alert: User needs testing...</span>
+            </div>
+
+            <div class="form-group">
+                <label for="age.entry.mode">Previously tested for HIV?</label>
+                <select class="form-control" id="age.entry.mode">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <section id="previously.tested.hiv" class="logic.section">
+                <div class="form-group">
+                    <label for="age.entry.mode">How many times have you been tested for HIV?</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">When were you last tested?</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Point of HIV Testing?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>pMTCT</option>
+                        <option>VCT</option>
+                        <option>HCT</option>
+                        <option>pHCT</option>
+                        <option>TB Clinic</option>
+                        <option>DTC/PITC</option>
+                        <option>Inpatient</option>
+                        <option>MCH</option>
+                        <option>OPD</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Previous HIV Results</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">When were you last tested?</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Did you disclose your HIV status to anyone?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Whom did you disclose to?</label>
+                    <select class="form-control" id="age.entry.mode">
+                        <option>Spouse/Partner</option>
+                        <option>Relative</option>
+                        <option>Friend</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                 <div class="form-group">
+                    <label for="age.entry.mode">What was the reason for not disclosing?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Stigma</option>
+                        <option>Religion</option>
+                        <option>Cultural Practices</option>
+                        <option>Other</option>
+                    </select>
+                </div> 
+            </section>
+
+            <section id="not.previously.tested.hiv" class="logic.section">
+                <div class="form-group">
+                    <label for="age.entry.mode">Did the client receive HIV counselling on this visit?</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Accepted testing?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Test 1 Result?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Determine</option>
+                        <option>Reactive</option>
+                        <option>Non-reactive</option>
+                            <option>Indeterminate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Test 2 Result?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Determine</option>
+                        <option>Reactive</option>
+                        <option>Non-reactive</option>
+                            <option>Indeterminate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">Test 3 Result?</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Determine</option>
+                        <option>Reactive</option>
+                        <option>Non-reactive</option>
+                            <option>Indeterminate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age.entry.mode">QA/QC Long Elisa Results</label>
+                     <select class="form-control" id="age.entry.mode">
+                        <option>Determine</option>
+                        <option>Reactive</option>
+                        <option>Non-reactive</option>
+                            <option>Indeterminate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <span>Display test results</span>
+                </div>
+            </section>    
+        </div>
+        <div class="section">
+            <h3>Tuberculosis screening</h3>
+
+            <div class="form-group">
+                <label for="age.entry.mode">Tuberculosis screening</label>
+                 <select class="form-control" id="age.entry.mode">
+                    <option>Cough > 2 weeks</option>
+                    <option>Bloody cough for past week</option>
+                    <option>Fever > 3 weeks</option>
+                    <option>Weight loss in past 1 year</option>
+                    <option>TB in household</option>
+                    <option>If child, failure to strive</option>
+                </select>
+            </div>
+
+             <div class="form-group">
+                <label for="age.entry.mode">Spot 1 Sputum Collected</label>
+                <select class="form-control" id="age.entry.mode">
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Unable to produce sputum</option>
+                    <option>Under 5 years , no years needed</option>
+                </select>
+            </div>
+
+             <div class="form-group">
+                <label for="age.entry.mode">Select referral. What are the HCT follow up orders?</label>
+                <select class="form-control" id="age.entry.mode">
+                    <option>Repeat HIV Testing in 5-6 months</option>
+                    <option>Referred to HIV Clinic, HIV Positive</option>
+                    <option>Health Center referral, Indeterminate HIV Test</option>
+                    <option>Health Center referral, Child less than 18 months</option>
+                    <option>ANC Referral</option>
+                    <option>Health Center referral, Other ailments</option>
+                    <option>VMMC</option>
+                    <option>Referred for TB</option>
+                    <option>STI referral</option>
+                    <option>None</option>
+                </select>
+            </div>
+
+            <section id="hct.follow.up.orders" class="logic.section">
+                <div class="form-group">
+                    <label for="age.entry.mode">Follow up date</label>
+                    <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
+                </div>
+
+                 <div class="form-group">
+                    <label for="age.entry.mode">Preferred clinic</label>
+                    <select class="form-control" id="age.entry.mode">
+                        <option>Chulaimbo AMPATH clinic</option>
+                        <option>Sunga Dispensary</option>
+                        <option>Chulaimbo Sub District Hospital</option>
+                        <option>Riat Dispensary</option>
+                        <option>Siriba Dispensary</option>
+                        <option>Gombewa Dispensary</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="form-group">
+                <span>Client looks very sick</span>
+            </div>  
+            
+        </div>
+        <div class="form-group text-center">
+            <input class="btn btn-primary" id="save_draft" type="button" value="Save as draft"/>
+            <input class="btn btn-primary" id="submit_form" type="submit" value="Submit as complete"/>
         </div>
 
-        <div class="form-group">
-            <label for="age.entry.mode">When were you last tested?</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Point of HIV Testing?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>pMTCT</option>
-                <option>VCT</option>
-                <option>HCT</option>
-                <option>pHCT</option>
-                <option>TB Clinic</option>
-                <option>DTC/PITC</option>
-                <option>Inpatient</option>
-                <option>MCH</option>
-                <option>OPD</option>
-                <option>Other</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Previous HIV Results</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">When were you last tested?</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Did you disclose your HIV status to anyone?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Whom did you disclose to?</label>
-            <select class="form-control" id="age.entry.mode">
-                <option>Spouse/Partner</option>
-                <option>Relative</option>
-                <option>Friend</option>
-                <option>Other</option>
-            </select>
-        </div>
-
-         <div class="form-group">
-            <label for="age.entry.mode">What was the reason for not disclosing?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Stigma</option>
-                <option>Religion</option>
-                <option>Cultural Practices</option>
-                <option>Other</option>
-            </select>
-        </div> 
-    </section>
-
-    <section id="not.previously.tested.hiv" class="logic.section">
-        <div class="form-group">
-            <label for="age.entry.mode">Did the client receive HIV counselling on this visit?</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Accepted testing?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Test 1 Result?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Determine</option>
-                <option>Reactive</option>
-                <option>Non-reactive</option>
-                    <option>Indeterminate</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Test 2 Result?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Determine</option>
-                <option>Reactive</option>
-                <option>Non-reactive</option>
-                    <option>Indeterminate</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">Test 3 Result?</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Determine</option>
-                <option>Reactive</option>
-                <option>Non-reactive</option>
-                    <option>Indeterminate</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="age.entry.mode">QA/QC Long Elisa Results</label>
-             <select class="form-control" id="age.entry.mode">
-                <option>Determine</option>
-                <option>Reactive</option>
-                <option>Non-reactive</option>
-                    <option>Indeterminate</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <span>Display test results</span>
-        </div>
-    </section>    
-</div>
-<div class="section">
-    <h3>Tuberculosis screening</h3>
-
-    <div class="form-group">
-        <label for="age.entry.mode">Tuberculosis screening</label>
-         <select class="form-control" id="age.entry.mode">
-            <option>Cough > 2 weeks</option>
-            <option>Bloody cough for past week</option>
-            <option>Fever > 3 weeks</option>
-            <option>Weight loss in past 1 year</option>
-            <option>TB in household</option>
-            <option>If child, failure to strive</option>
-        </select>
-    </div>
-
-     <div class="form-group">
-        <label for="age.entry.mode">Spot 1 Sputum Collected</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Yes</option>
-            <option>No</option>
-            <option>Unable to produce sputum</option>
-            <option>Under 5 years , no years needed</option>
-        </select>
-    </div>
-
-     <div class="form-group">
-        <label for="age.entry.mode">Select referral. What are the HCT follow up orders?</label>
-        <select class="form-control" id="age.entry.mode">
-            <option>Repeat HIV Testing in 5-6 months</option>
-            <option>Referred to HIV Clinic, HIV Positive</option>
-            <option>Health Center referral, Indeterminate HIV Test</option>
-            <option>Health Center referral, Child less than 18 months</option>
-            <option>ANC Referral</option>
-            <option>Health Center referral, Other ailments</option>
-            <option>VMMC</option>
-            <option>Referred for TB</option>
-            <option>STI referral</option>
-            <option>None</option>
-        </select>
-    </div>
-
-    <section id="hct.follow.up.orders" class="logic.section">
-        <div class="form-group">
-            <label for="age.entry.mode">Follow up date</label>
-            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text">
-        </div>
-
-         <div class="form-group">
-            <label for="age.entry.mode">Preferred clinic</label>
-            <select class="form-control" id="age.entry.mode">
-                <option>Chulaimbo AMPATH clinic</option>
-                <option>Sunga Dispensary</option>
-                <option>Chulaimbo Sub District Hospital</option>
-                <option>Riat Dispensary</option>
-                <option>Siriba Dispensary</option>
-                <option>Gombewa Dispensary</option>
-                <option>Other</option>
-            </select>
-        </div>
-    </section>
-
-    <div class="form-group">
-        <span>Client looks very sick</span>
-    </div>  
-    
-</div>
-<div class="form-group text-center">
-    <input class="btn btn-primary" id="save_draft" type="button" value="Save as draft"/>
-    <input class="btn btn-primary" id="submit_form" type="submit" value="Submit as complete"/>
-</div>
-
-</form>
+    </form>
 
 </body>
 <script type="text/javascript">
 $(document).ready(function () {
+
+    $('#phct_household_survey_form').hide()  ;
 
     var IDInputFieldEntered = false ; 
     var formerIDEntered = '' ; 
